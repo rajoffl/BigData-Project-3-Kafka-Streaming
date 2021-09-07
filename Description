@@ -1,0 +1,15 @@
+zookeeper started(if not already) using
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+kafka started using the below command.
+bin/kafka-server-start.sh config/server.properties
+
+Producer.py - Kafka producer program which will connect to web socket and sends to topic meetup.
+Consumer.py - Kafka consumer consumes messages from the topic meetup.
+
+
+spark_meetup.py - Spark application program to do some analysis
+The above program submitted using 
+bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.0.1 spark_meetup.py localhost:2181 meetup
+
+visualization.py - Produces visualizations using matplotlib.
